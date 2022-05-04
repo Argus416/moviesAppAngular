@@ -20,15 +20,12 @@ export class AppComponent {
         filmTitle: this.filmTitle,
         desc: this.desc,
     };
-    constructor(private apiOdmbService: ApiOdmbService) {
-        console.log(apiOdmbService);
-    }
+    constructor(private apiOdmbService: ApiOdmbService) {}
 
     onSubmit() {
         this.apiOdmbService.getFilm(this.filmName).subscribe((res) => {
             this.start = false;
             console.log(res);
-            console.log(res.Response);
             if (res.Response == 'True') {
                 this.showCard = true;
                 this.poster = res.Poster;
