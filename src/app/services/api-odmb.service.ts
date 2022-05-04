@@ -12,8 +12,8 @@ export class ApiOdmbService {
 
     constructor(private http: HttpClient) {}
 
-    getFilm(text: string) {
-        const url: string = `${this.apiKey}${this.searchByName}${text}`;
+    getFilm(text: string): Observable<any> {
+        const url: string = `${this.apiUrl}${this.searchByName}${text}`;
         return this.http.get(url);
     }
 }

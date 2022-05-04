@@ -1,8 +1,5 @@
 <div class="container mt-5">
-    <form
-        class="search-form input-group text-light"
-        (submit)="onSubmit($event)"
-    >
+    <form class="search-form input-group text-light" (submit)="onSubmit()">
         <div class="form-group w-100">
             <label for="searchInput">Saissiez le nom de film</label>
             <input
@@ -10,16 +7,18 @@
                 name="searchInput"
                 id="searchInput"
                 class="form-control searchInput"
+                name="filmName"
+                [(ngModel)]="filmName"
             />
         </div>
     </form>
 
     <div class="row cards-parent justify-content-center">
         <div class="card col-lg-3 col-md-4 mt-3">
-            <img src="" alt="movie" class="card-img-top" />
+            <img src="{{ poster }}" alt="movie" class="card-img-top" />
             <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
+                <h5 class="card-title">{{ filmTitle }}</h5>
+                <p class="card-text">{{ desc }}</p>
             </div>
         </div>
     </div>
