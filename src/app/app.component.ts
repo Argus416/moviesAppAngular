@@ -6,6 +6,8 @@ import { ApiOdmbService } from './services/api-odmb.service';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+    start: boolean = true;
+    showCard: boolean = false;
     filmName: string = '';
     title = 'moviesAppAngular';
 
@@ -24,9 +26,17 @@ export class AppComponent {
 
     onSubmit() {
         this.apiOdmbService.getFilm(this.filmName).subscribe((res) => {
-            this.poster = res.Poster;
-            this.filmTitle = res.Title;
-            this.desc = res.Plot.slice(0, 200);
+            this.start = false;
+            console.log(res);
+            console.log(res.Response);
+            if (res.Response == 'True') {
+                this.showCard = true;
+                this.poster = res.Poster;
+                this.filmTitle = res.Title;
+                this.desc = res.Plot.slice(0, 200);
+            } else {
+                this.showCard = false;
+            }
         });
     }
 }
