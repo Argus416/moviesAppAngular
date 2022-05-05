@@ -7,7 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { CardsComponent } from './components/cards/cards.component';
+import { CardsComponent } from './page/home/cards/cards.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './page/about/about.component';
