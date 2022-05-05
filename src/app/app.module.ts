@@ -7,9 +7,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
-    declarations: [AppComponent, NavbarComponent],
+    declarations: [AppComponent, NavbarComponent, CardsComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
