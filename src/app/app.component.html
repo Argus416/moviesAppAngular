@@ -1,29 +1,5 @@
 <app-navbar></app-navbar>
-<div class="container mt-5">
-    <form class="search-form input-group text-light" (submit)="onSubmit()">
-        <div class="form-group w-100">
-            <label for="searchInput">Saissiez le nom de film</label>
-            <input
-                type="text"
-                name="searchInput"
-                id="searchInput"
-                class="form-control searchInput"
-                name="filmName"
-                [(ngModel)]="filmName"
-            />
-        </div>
-    </form>
-    <div
-        *ngIf="showCard; else Nope"
-        class="row cards-parent justify-content-center"
-    >
-        <app-cards [res]="res"></app-cards>
-    </div>
-    <ng-template #Nope>
-        <h1 *ngIf="!start" clsas="text-danger" [ngStyle]="{ color: 'red' }">
-            Film doesn't exits
-        </h1>
-    </ng-template>
-</div>
 
-<router-outlet></router-outlet>
+<div class="container mt-5">
+    <router-outlet></router-outlet>
+</div>

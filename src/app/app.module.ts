@@ -9,12 +9,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardsComponent } from './components/cards/cards.component';
 
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './page/about/about.component';
+import { HomeComponent } from './page/home/home.component';
+import { FormComponent } from './page/home/form/form.component';
+const appRoutes: Routes = [
+    { path: '', component: HomeComponent },
+    { path: 'about', component: AboutComponent },
+];
+
 @NgModule({
-    declarations: [AppComponent, NavbarComponent, CardsComponent],
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        CardsComponent,
+        AboutComponent,
+        HomeComponent,
+        FormComponent,
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         NgbModule,
+        RouterModule.forRoot(appRoutes),
         FormsModule,
         HttpClientModule,
     ],
