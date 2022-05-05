@@ -11,15 +11,6 @@ export class AppComponent {
     filmName: string = '';
     title = 'moviesAppAngular';
 
-    poster: string = '';
-    filmTitle: string = '';
-    desc: string = '';
-
-    film = {
-        poster: this.poster,
-        filmTitle: this.filmTitle,
-        desc: this.desc,
-    };
     constructor(private apiOdmbService: ApiOdmbService) {}
 
     onSubmit() {
@@ -28,9 +19,6 @@ export class AppComponent {
             console.log(res);
             if (res.Response == 'True') {
                 this.showCard = true;
-                this.poster = res.Poster;
-                this.filmTitle = res.Title;
-                this.desc = res.Plot.slice(0, 200);
             } else {
                 this.showCard = false;
             }
