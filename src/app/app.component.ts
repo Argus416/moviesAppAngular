@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ApiOdmbService } from './services/api-odmb.service';
 @Component({
     selector: 'app-root',
@@ -11,12 +11,14 @@ export class AppComponent {
     filmName: string = '';
     title = 'moviesAppAngular';
 
+    res: object = {};
+
     constructor(private apiOdmbService: ApiOdmbService) {}
 
     onSubmit() {
         this.apiOdmbService.getFilm(this.filmName).subscribe((res) => {
             this.start = false;
-            console.log(res);
+            this.res = res;
             if (res.Response == 'True') {
                 this.showCard = true;
             } else {

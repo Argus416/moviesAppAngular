@@ -1,17 +1,7 @@
-<div
-    *ngIf="showCard; else Nope"
-    class="row cards-parent justify-content-center"
->
-    <div class="card col-lg-3 col-md-4 mt-3">
-        <img src="{{ poster }}" alt="movie" class="card-img-top" />
-        <div class="card-body">
-            <h5 class="card-title">{{ filmTitle }}</h5>
-            <p class="card-text">{{ desc }}</p>
-        </div>
+<div class="card col-lg-3 col-md-4 mt-3">
+    <img src="{{ res.Poster }}" alt="movie" class="card-img-top" />
+    <div class="card-body">
+        <h5 class="card-title">{{ res.Title }}</h5>
+        <p class="card-text">{{ res.Plot }}</p>
     </div>
 </div>
-<ng-template #Nope>
-    <h1 *ngIf="!start" clsas="text-danger" [ngStyle]="{ color: 'red' }">
-        Film doesn't exits
-    </h1>
-</ng-template>
